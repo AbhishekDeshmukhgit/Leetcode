@@ -1,3 +1,4 @@
+//Naive Solution
 class Solution {
     public boolean searchMatrix(int[][] arr, int key) {
         for (int i = 0; i < arr.length; i++) {
@@ -22,4 +23,29 @@ class Solution {
         }
         return false;
     }
+}
+
+//Optimised Solution
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        
+        int row=0;
+        int col=matrix[0].length-1,n=matrix.length;
+        while(col>=0 && row<n)
+        {
+            if(matrix[row][col]==target)
+            {
+                return true;
+            }
+            else if(target>matrix[row][col])
+            {
+                row++;
+            }
+            else if(target<matrix[row][col]){
+                col--;
+            }
+        }
+        return false;
+    }
+    
 }
