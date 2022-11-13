@@ -11,6 +11,10 @@ class Solution {
                 {
                     count++;
                 }
+                else if(lcm>k)
+                {
+                    break;
+                }
                 
             }
         }
